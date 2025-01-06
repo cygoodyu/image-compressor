@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="简单高效的在线图片压缩工具，支持PNG、JPG格式">
+    <meta name="keywords" content="图片压缩,在线工具,图片优化">
+    <link rel="icon" href="favicon.ico">
+    <!-- 添加社交媒体预览信息 -->
+    <meta property="og:title" content="图片压缩工具">
+    <meta property="og:description" content="简单高效的在线图片压缩工具">
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题区域 -->
+        <header class="header">
+            <h1>图片压缩工具</h1>
+            <p>简单高效的在线图片压缩服务</p>
+        </header>
+
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/png,image/jpeg" multiple hidden>
+            <div class="upload-box">
+                <svg class="upload-icon" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                <p>点击或拖拽图片到这里</p>
+                <p class="upload-hint">支持PNG、JPG格式，最多可同时上传10张</p>
+            </div>
+        </div>
+
+        <!-- 预览和控制区域 -->
+        <div class="preview-container" id="previewContainer" hidden>
+            <!-- 添加批量控制面板 -->
+            <div class="batch-control-panel">
+                <div class="quality-control">
+                    <label for="quality">压缩质量：</label>
+                    <input type="range" id="quality" min="10" max="90" value="75">
+                    <span id="qualityValue">75%</span>
+                </div>
+                <button id="downloadAllBtn" class="download-btn">打包下载所有压缩图片</button>
+            </div>
+
+            <!-- 修改预览区域为图片列表 -->
+            <div class="images-list" id="imagesList">
+                <!-- 图片项会通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+    </div>
+    <script defer src="script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=你的跟踪ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '你的跟踪ID');
+    </script>
+</body>
+</html> 
