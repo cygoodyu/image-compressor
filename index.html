@@ -37,12 +37,27 @@
         <div class="preview-container" id="previewContainer" hidden>
             <!-- 添加批量控制面板 -->
             <div class="batch-control-panel">
-                <div class="quality-control">
-                    <label for="quality">压缩质量：</label>
-                    <input type="range" id="quality" min="10" max="90" value="75">
-                    <span id="qualityValue">75%</span>
+                <div class="compression-controls">
+                    <div class="mode-control">
+                        <label for="compressionMode">压缩模式：</label>
+                        <select id="compressionMode">
+                            <option value="balanced">平衡模式</option>
+                            <option value="lossless">高质量模式</option>
+                            <option value="extreme">极限压缩模式</option>
+                        </select>
+                    </div>
+                    <div class="quality-control">
+                        <label for="qualityInput">压缩质量：</label>
+                        <input type="range" id="qualityInput" min="10" max="90" value="75">
+                        <span id="qualityValue">75%</span>
+                    </div>
                 </div>
                 <button id="downloadAllBtn" class="download-btn">打包下载所有压缩图片</button>
+            </div>
+
+            <!-- 压缩模式说明 -->
+            <div class="mode-description">
+                <p id="modeInfo">平衡模式: 在文件大小和图像质量之间寻求最佳平衡</p>
             </div>
 
             <!-- 修改预览区域为图片列表 -->
@@ -61,4 +76,4 @@
       gtag('config', '你的跟踪ID');
     </script>
 </body>
-</html> 
+</html>
